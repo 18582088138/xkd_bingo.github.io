@@ -61,8 +61,7 @@ nodes in YOLOv5. We can use Netron to visualize the YOLOv5 ONNX weights.
   
   **Note** Here the dimension 85 is equal to (4+1)*80, which stands for 4 coordinates for BBX, 1 confidence and 80 classes.
 ```
-<div align=left ><img src="https://github.com/18582088138/xkd_bingo.github.io/blob/gh-pages/yolov5%20output%20node%20of%208x%20down%20sampling.png"/>
-  
+![Figure1 align=left](https://github.com/18582088138/xkd_bingo.github.io/blob/gh-pages/yolov5%20output%20node%20of%208x%20down%20sampling.png "Figure 1: The Output Node of YOLOv5s, P3 after 8x Down Sampling for Small Object Detection")  
 **Figure 1**: The Output Node of YOLOv5s, P3 after 8x Down Sampling for Small Object Detection
   
   
@@ -72,8 +71,7 @@ nodes in YOLOv5. We can use Netron to visualize the YOLOv5 ONNX weights.
   Figure 2 shows the output node with size of 1x3x40x40x85, which is used to detect medium objects. 
   We need to apply “Conv_261” of convolution node to specify the model optimizer parameters
 ```
-<div align=left ><img src="https://github.com/18582088138/xkd_bingo.github.io/blob/gh-pages/yolov5%20output%20node%20of%2016x%20down%20sampling.png"/>
-
+![Figure2 align=left](https://github.com/18582088138/xkd_bingo.github.io/blob/gh-pages/yolov5%20output%20node%20of%2016x%20down%20sampling.png "Figure 2: The Output Node of YOLOv5s, P4 after 16x Down Sampling for Small Object Detection")
 **Figure 2**: The Output Node of YOLOv5s, P4 after 16x Down Sampling for Small Object Detection
 
 ##### Specify Output Node of 20*20
@@ -82,8 +80,7 @@ nodes in YOLOv5. We can use Netron to visualize the YOLOv5 ONNX weights.
   Figure 3 shows the output node with size of 1x3x20x20x85, which is used to detect large objects. 
   We need to apply “Conv_277” of convolution node to specify the model optimizer parameters
 ```
-<div align=left ><img src="https://github.com/18582088138/xkd_bingo.github.io/blob/gh-pages/yolov5%20output%20node%20of%2032x%20down%20sampling.png"/>
-
+![Figure3 align=left](https://github.com/18582088138/xkd_bingo.github.io/blob/gh-pages/yolov5%20output%20node%20of%2032x%20down%20sampling.png "Figure 3: The Output Node of YOLOv5s, P5 after 32x Down Sampling for Small Object Detection")  
 **Figure 3**: The Output Node of YOLOv5s, P5 after 32x Down Sampling for Small Object Detection
 
 Using MO tool inside OpenVINOTM  to convert ONNX to IR files
@@ -115,7 +112,7 @@ $ python3 /opt/intel/openvino/deployment_tools/tools/benchmark_tool/benchmark_ap
 -d CPU
   
 ``` 
-<div align=left ><img src="https://github.com/18582088138/xkd_bingo.github.io/blob/gh-pages/yolov5_benchmark_performance.png"/>
+![Figure4 algin=left](https://github.com/18582088138/xkd_bingo.github.io/blob/gh-pages/yolov5_benchmark_performance.png "Figure 4 :Yolov5s performance detail")
 **Figure 4** :Yolov5s performance detail  
 
 ### Jekyll Themes
