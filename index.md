@@ -27,7 +27,36 @@ The following are some verified version in environment requisite, not all suppor
 |Kernel version |5.4.0-74-generic|
 |Netron         |Netron 4.9.8 |
 
-### Chapter 1  Convert Yolov5 from PyTorch to IR by OpenVINO™
+#### Convert Yolov5 from PyTorch to IR by OpenVINO™
+
+##### Setup Yolov5 Environment
+Run git command to clone Yolov5 repository, here we use release v5.0 and install requirement.
+```markdown
+$ git clone https://github.com/ultralytics/yolov5 -b v5.0
+$ pip install -r requirements.txt
+$ pip install onnx
+```
+
+#####  Convert PyTorch weights to ONNX weights
+There are YOLOv5s, YOLOv5m, YOLOv5l, and YOLOv5x four models supported for YOLOv5, we use   YOLOv5s as example here, and other models are same. Run the below command to get **yolov5s.pt**
+And convert it to ONNX weights.
+```markdown
+$ wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
+$ mkdir yolov5-v5
+$ mv yolov5s.pt yolov5-v5
+$ python3 models/export.py --weights yolov5-v5/yolov5s.pt --img 640 --batch 1
+```
+
+#### Convert ONNX to IR files
+We can start to convert it to IR files now after getting ONNX weights file from the 
+last section. At first, the output nodes need to be specified. There are 3 output 
+nodes in YOLOv5. We can use Netron to visualize the YOLOv5 ONNX weights.
+
+```markdown
+##### 1.	Specify Output Node of 80*80
+We can search the keyword “Transpose” in Netron, and then the convolution node will be found, marked as rectangle shown in Figure 1. After double clicking it, we can read the name “Conv_245” on the right panel of properties marked as oval. Figure 1 shows the output node with size of 1x3x80x80x85, which is used to detect small objects. We need to apply “Conv_245” of convolution node to specify the model optimizer parameters.
+```
+
 
 
 
