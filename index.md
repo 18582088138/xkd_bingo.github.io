@@ -55,6 +55,7 @@ nodes in YOLOv5. We can use Netron to visualize the YOLOv5 ONNX weights.
 ```markdown
 ##### 1.	Specify Output Node of 80*80
 We can search the keyword “Transpose” in Netron, and then the convolution node will be found, marked as rectangle shown in Figure 1. After double clicking it, we can read the name “Conv_245” on the right panel of properties marked as oval. Figure 1 shows the output node with size of 1x3x80x80x85, which is used to detect small objects. We need to apply “Conv_245” of convolution node to specify the model optimizer parameters.
+![avatar](https://github.com/18582088138/xkd_bingo.github.io/blob/gh-pages/yolov5%20output%20node%20of%208x%20down%20sampling.png "test")
 ```
 
 
